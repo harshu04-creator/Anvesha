@@ -493,104 +493,123 @@
             box-shadow: 0 10px 30px rgba(255, 218, 121, 0.3);
         }
 
-        @keyframes popIn {
-            0% { transform: scale(0); opacity: 0; }
-            100% { transform: scale(1); opacity: 1; }
-        }
-      /* ============================================== Candle
-      */
+/* ========== ANIMATED CAKE STYLES ========== */
+.cake-animation-section {
+    background: #000000ec;
+    border-radius: 30px;
+    padding: 80px 20px;
+    margin: 60px 0;
+    text-align: center;
+    min-height: 700px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    isolation: isolate;
+}
 
-      .cake {
-        background: #ffffff;
-        border-radius: 10px;
-        position: absolute;
-        top: 228px;
-        left: 50%;
-        margin-left: -2.4px;
-        margin-top: -8.33333333px;
-        width: 5px;
-        height: 35px;
-        transform: translateY(-300px);
-        backface-visibility: hidden;
-        animation: in 500ms 6s ease-out forwards;
-      }
-      .cake:after,
-      .cake:before {
-        background: rgba(255, 0, 0, 0.4);
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 2.22222222px;
-      }
-      .cake:after {
-        top: 25%;
-        left: 0;
-      }
-      .cake:before {
-        top: 45%;
-        left: 0;
-      }
+#cake {
+  display: block;
+  position: relative;
+  margin: 50px auto 0 auto;
+  z-index: 2;
+  max-width: 200px;
+  height: auto;
+}
 
-      /* ============================================== Fire
-      */
+.cake {
+  background: #ffffff;
+  border-radius: 10px;
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  margin-left: -2.4px;
+  margin-top: -8.33333333px;
+  width: 5px;
+  height: 35px;
+  transform: translateY(-300px);
+  backface-visibility: hidden;
+  animation: in 500ms 6s ease-out forwards;
+  z-index: 10;
+}
 
-      .fuego {
-        border-radius: 100%;
-        position: absolute;
-        top: -20px;
-        left: 50%;
-        margin-left: -2.6px;
-        width: 6.66666667px;
-        height: 18px;
-      }
-      .fuego:nth-child(1) {
-        animation: fuego 2s 6.5s infinite;
-      }
-      .fuego:nth-child(2) {
-        animation: fuego 1.5s 6.5s infinite;
-      }
-      .fuego:nth-child(3) {
-        animation: fuego 1s 6.5s infinite;
-      }
-      .fuego:nth-child(4) {
-        animation: fuego 0.5s 6.5s infinite;
-      }
-      .fuego:nth-child(5) {
-        animation: fuego 0.2s 6.5s infinite;
-      }
+.cake:after,
+.cake:before {
+  background: rgba(255, 0, 0, 0.4);
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2.22222222px;
+}
 
-      /* ============================================== Animation Fire
-      */
+.cake:after {
+  top: 25%;
+  left: 0;
+}
 
-      @keyframes fuego {
-        0%, 100% {
-          background: rgba(254, 248, 97, 0.5);
-          box-shadow: 0 0 40px 10px rgba(248, 233, 209, 0.2);
-          transform: translateY(0) scale(1);
-        }
-        50% {
-          background: rgba(255, 50, 0, 0.1);
-          box-shadow: 0 0 40px 20px rgba(248, 233, 209, 0.2);
-          transform: translateY(-20px) scale(0);
-        }
-      }
+.cake:before {
+  top: 45%;
+  left: 0;
+}
 
-      @keyframes in {
-        to {
-          transform: translateY(0);
-        }
-      }
+.fuego {
+  border-radius: 100%;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  margin-left: -2.6px;
+  width: 6.66666667px;
+  height: 18px;
+  pointer-events: none;
+}
 
-      .text {
-        color: #8b6a60;
-        font-family: 'Lato', sans-serif;
-        font-weight: 300;
-        font-style:italic;
-        text-align: center;
-        h1 {
-          font-size: 1.4em;
-        }
+.fuego:nth-child(1) { animation: fuego 2s 6.5s infinite; }
+.fuego:nth-child(2) { animation: fuego 1.5s 6.5s infinite; }
+.fuego:nth-child(3) { animation: fuego 1s 6.5s infinite; }
+.fuego:nth-child(4) { animation: fuego 0.5s 6.5s infinite; }
+.fuego:nth-child(5) { animation: fuego 0.2s 6.5s infinite; }
+
+@keyframes fuego {
+  0%, 100% {
+    background: rgba(254, 248, 97, 0.5);
+    box-shadow: 0 0 40px 10px rgba(248, 233, 209, 0.2);
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    background: rgba(255, 50, 0, 0.1);
+    box-shadow: 0 0 40px 20px rgba(248, 233, 209, 0.2);
+    transform: translateY(-20px) scale(0);
+  }
+}
+
+@keyframes in {
+  to {
+    transform: translateY(0);
+  }
+}
+
+.cake-text {
+  color: #8b6a60;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  text-align: center;
+  margin-top: 50px;
+  position: relative;
+  z-index: 3;
+}
+
+.cake-text h1 {
+  font-size: 1.4em;
+  color: #fff;
+}
+
+.cake-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
             }
+
+        
 
         /* Music Player - Floating Modern Design */
         .music-player {
@@ -721,111 +740,15 @@
             .final-message { padding: 40px 25px; }
             .final-message h2 { font-size: 36px; }
         }
-        /* ========== ANIMATED CAKE STYLES ========== */
-.cake-animation-section {
-    background: #000000ec;
-    border-radius: 30px;
-    padding: 50px 20px;
-    margin: 40px 0;
-    text-align: center;
-    min-height: 700px;
-    position: relative;
-}
 
-#cake {
-  display: block;
-  position: relative;
-  margin: -10em auto 0 auto;
-}
 
-.cake {
-  background: #ffffff;
-  border-radius: 10px;
-  position: absolute;
-  top: 228px;
-  left: 50%;
-  margin-left: -2.4px;
-  margin-top: -8.33333333px;
-  width: 5px;
-  height: 35px;
-  transform: translateY(-300px);
-  backface-visibility: hidden;
-  animation: in 5000ms 10s ease-out forwards;
-}
 
-.cake:after,
-.cake:before {
-  background: rgba(255, 0, 0, 0.4);
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2.22222222px;
-}
 
-.cake:after {
-  top: 25%;
-  left: 0;
-}
 
-.cake:before {
-  top: 45%;
-  left: 0;
-}
+        
+        
 
-.fuego {
-  border-radius: 100%;
-  position: absolute;
-  top: -20px;
-  left: 50%;
-  margin-left: -2.6px;
-  width: 6.66666667px;
-  height: 18px;
-}
 
-.fuego:nth-child(1) { animation: fuego 2s 6.5s infinite; }
-.fuego:nth-child(2) { animation: fuego 1.5s 6.5s infinite; }
-.fuego:nth-child(3) { animation: fuego 1s 6.5s infinite; }
-.fuego:nth-child(4) { animation: fuego 0.5s 6.5s infinite; }
-.fuego:nth-child(5) { animation: fuego 0.2s 6.5s infinite; }
-
-@keyframes fuego {
-  0%, 100% {
-    background: rgba(254, 248, 97, 0.5);
-    box-shadow: 0 0 40px 10px rgba(248, 233, 209, 0.2);
-    transform: translateY(0) scale(1);
-  }
-  50% {
-    background: rgba(255, 50, 0, 0.1);
-    box-shadow: 0 0 40px 20px rgba(248, 233, 209, 0.2);
-    transform: translateY(-20px) scale(0);
-  }
-}
-
-@keyframes in {
-  to {
-    transform: translateY(0);
-  }
-}
-
-.cake-text {
-  color: #8b6a60;
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  font-style: italic;
-  text-align: center;
-  margin-top: 50px;
-}
-
-.cake-text h1 {
-  font-size: 1.4em;
-  color: #8b6a60;
-}
-
-.cake-name {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #8b6a60;
-            }
 
         /* Sparkle Effect */
         .sparkle {
@@ -1055,8 +978,17 @@
                 <div id="candle-message" style="margin-top: 35px; font-size: 22px; color: #764ba2; font-weight: 600;"></div>
             </div>
         </div>
+
+
+
+
+
+
+
+
+        
            <!--cake-->
-    M128.38,447.567c37.626,6.312,39.303,13.658,26.833,12.833c-22.653-1.499-13.636-0.831-23.302-0.831
+    
     <div class="cake">
         <div class="fuego"></div>
         <div class="fuego"></div>
