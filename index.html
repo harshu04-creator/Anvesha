@@ -375,26 +375,27 @@
             color: #333;
             line-height: 1.7;
         }
-/* Photo Grid - SMALL Size */
+/* Photo Grid - Vertical Single Column */
 .photo-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 50px); /* Very small - only 60px each */
-    gap: 8px;
+    display: flex;
+    flex-direction: column; /* Makes items stack vertically */
+    align-items: center; /* Centers them horizontally */
+    gap: 15px;
     margin: 40px auto;
-    justify-content: center;
+    max-width: 300px; /* Controls width of column */
 }
 
 .photo-frame {
-    width: 70px;
-    height: 70px;
+    width: 100px;
+    height: 100px;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 20px;
+    border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     cursor: pointer;
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
 }
 
 .photo-frame img {
@@ -405,9 +406,9 @@
 }
 
 .photo-frame:hover {
-    transform: scale(1.1);
-    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.5);
-    }
+    transform: scale(1.05);
+    box-shadow: 0 20px 50px rgba(102, 126, 234, 0.5);
+}
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
