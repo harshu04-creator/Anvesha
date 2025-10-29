@@ -1081,8 +1081,8 @@
     </div>
 
     <!-- Background Audio -->
-    <audio id="birthday-music" loop>
-        <source src="audio/happy birthday.mp3" type="audio/mpeg">
+    <audio id="birthday-music" loop muted>
+    <source src="audio/happy birthday.mp3" type="audio/mpeg">
     </audio>
 
     <script>
@@ -1352,18 +1352,17 @@
         }
 
         // Music Player
-        let musicPlaying = false;
         function toggleMusic() {
-            const music = document.getElementById('happy birthday');
-            const icon = document.getElementById('music-icon');
-            if (musicPlaying) {
-                music.pause();
-                icon.textContent = '🎵';
-            } else {
-                music.play();
-                icon.textContent = '🔊';
-            }
-            musicPlaying = !musicPlaying;
+    const music = document.getElementById('birthday-music');
+    const icon = document.getElementById('music-icon');
+    
+    if (music.paused) {
+        music.play().catch(e => console.log('Playback failed:', e));
+        icon.textContent = '🔊';
+    } else {
+        music.pause();
+        icon.textContent = '🔇';
+    }
         }
     </script>
 </body>
